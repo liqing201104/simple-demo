@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="com.simple.mybatis.demo.mapper.UserInfoMapper" >
 
-    <insert id="insert" parameterType="com.simple.mybatis.demo.domain.UserInfo" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert1" parameterType="com.simple.mybatis.demo.domain.UserInfo" useGeneratedKeys="true" keyProperty="id">
         insert into user_info(user_name, password) values(#{userName}, #{password})
     </insert>
 
