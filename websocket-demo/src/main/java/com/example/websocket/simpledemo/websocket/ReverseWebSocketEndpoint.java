@@ -19,10 +19,10 @@ import java.io.IOException;
 @ServerEndpoint("/reverse/{sid}")
 public class ReverseWebSocketEndpoint {
 
-    @OnMessage
-    public void handleMessage(Session session, String message, @PathParam("sid") String sid) throws IOException {
-        System.out.println("------------------------" + sid);
-        session.getBasicRemote().sendText("Reversed: " + new StringBuilder(message).reverse());
-    }
+	@OnMessage
+	public void handleMessage(Session session, String message, @PathParam("sid") String sid) throws IOException {
+		System.out.println("------------------------" + sid + "______" + this);
+		session.getBasicRemote().sendText("Reversed: " + new StringBuilder(message).reverse());
+	}
 
 }
