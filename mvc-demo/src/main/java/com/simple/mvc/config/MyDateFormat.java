@@ -1,9 +1,13 @@
 package com.simple.mvc.config;
 
+import com.fasterxml.jackson.databind.util.StdDateFormat;
+
 import java.text.*;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
-class MyDateFormat extends DateFormat {
+class MyDateFormat extends StdDateFormat {
 
 	private DateFormat dateFormat;
 
@@ -45,9 +49,14 @@ class MyDateFormat extends DateFormat {
 		return date;
 	}
 
+	@Override
+	protected void _format(TimeZone tz, Locale loc, Date date, StringBuffer buffer) {
+		super._format(tz, loc, date, buffer);
+	}
+
 	// 这里装饰clone方法的原因是因为clone方法在jackson中也有用到
 	@Override
-	public Object clone() {
+	public MyDateFormat clone() {
 		Object format = dateFormat.clone();
 		return new MyDateFormat((DateFormat) format);
 	}
