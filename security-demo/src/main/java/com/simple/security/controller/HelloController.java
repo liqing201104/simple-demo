@@ -1,9 +1,12 @@
 package com.simple.security.controller;
 
+import com.simple.security.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -18,4 +21,13 @@ public class HelloController {
 
 		return "Hello：" + username;
 	}
+
+	@Autowired
+	private UserService userService;
+
+	@GetMapping("/register")
+	public String register(@RequestParam("userName") String userName, @RequestParam("password")String password){
+		return userService.register(userName, password);
+	}
+
 }
