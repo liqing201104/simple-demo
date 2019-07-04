@@ -19,6 +19,7 @@
         <module>mybatis-demo</module>
         <module>mvc-demo</module>
         <module>mvc-demo-1.5</module>
+        <module>security-demo</module>
         <module>websocket-demo</module>
     </modules>
 
