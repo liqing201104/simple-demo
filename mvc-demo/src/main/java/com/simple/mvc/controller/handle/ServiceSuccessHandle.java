@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@ControllerAdvice(basePackageClasses = RestController.class)
+@ControllerAdvice(annotations = RestController.class)
 public class ServiceSuccessHandle implements ResponseBodyAdvice<Object> {
 
 	@Override
