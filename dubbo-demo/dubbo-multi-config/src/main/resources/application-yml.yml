@@ -1,0 +1,35 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: dubbo-multi-config
+
+dubbo:
+  config:
+#    multiple: true
+  config-center:
+    address: nacos://192.168.124.254:8848
+  metadata-report:
+    address: nacos://192.168.124.254:8848
+  registry:
+    address: nacos://192.168.124.254:8848
+  protocol:
+    name: dubbo
+    port: -1
+
+  registrys:
+    - zookeeper:
+        address: zookeeper://192.168.124.254:2181
+    - nacos:
+        address: nacos://192.168.124.254:8848
+  metadata-reports:
+    - zookeeper:
+        address: zookeeper://192.168.124.254:2181
+    - nacos:
+        address: nacos://192.168.124.254:8848
+  config-centers:
+    - zookeeper:
+        address: zookeeper://192.168.124.254:2181
+    - nacos:
+        address: nacos://192.168.124.254:8848
