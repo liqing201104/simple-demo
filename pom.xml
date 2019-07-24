@@ -9,6 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <dubbo.version>2.7.3</dubbo.version>
+    </properties>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,6 +25,7 @@
         <module>mvc-demo-1.5</module>
         <module>security-demo</module>
         <module>websocket-demo</module>
+        <module>dubbo-demo</module>
     </modules>
 
     <dependencies>
@@ -29,7 +34,6 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
