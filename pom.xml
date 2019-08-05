@@ -26,6 +26,8 @@
         <module>security-demo</module>
         <module>websocket-demo</module>
         <module>dubbo-demo</module>
+        <module>netty-demo</module>
+        <module>redis-demo</module>
     </modules>
 
     <dependencies>
