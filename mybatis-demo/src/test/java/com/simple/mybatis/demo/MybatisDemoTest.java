@@ -1,10 +1,11 @@
 package com.simple.mybatis.demo;
 
-import com.baomidou.mybatisplus.toolkit.IdWorker;
 import com.simple.mybatis.demo.domain.SysRole;
+import com.simple.mybatis.demo.domain.User;
 import com.simple.mybatis.demo.domain.UserInfo;
 import com.simple.mybatis.demo.mapper.SysRoleMapper;
 import com.simple.mybatis.demo.mapper.UserInfoMapper;
+import com.simple.mybatis.demo.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,6 @@ public class MybatisDemoTest {
 
 	@Test
 	public void testInsert(){
-
-
 		UserInfo userInfo = new UserInfo("zhangsan", "12345");
 		Integer insert = userMapper.insert(userInfo);
 		System.out.println(insert + "__________" + userInfo.getId());
@@ -41,6 +40,16 @@ public class MybatisDemoTest {
 		Integer insert3 = roleMapper.insert2(sysRole3);
 		System.out.println(insert3 + "__________" + sysRole3.getRoleId());
 
+	}
+
+
+	@Autowired
+	private UserMapper userMapper2;
+
+	@Test
+	public void queryDate(){
+		User user = userMapper2.queryById(1L);
+		System.out.println(user);
 	}
 			
 	

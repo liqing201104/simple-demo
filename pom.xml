@@ -28,6 +28,7 @@
         <module>dubbo-demo</module>
         <module>netty-demo</module>
         <module>redis-demo</module>
+        <module>collection-demo</module>
     </modules>
 
     <dependencies>

@@ -23,4 +23,10 @@ public interface DemoService {
 
     String sayHello(String name);
 
+    public static void main(String[] args) {
+        System.out.println("sdsad");
+    }
+
+    public static final int a = 123;
+
 }
